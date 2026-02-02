@@ -3,6 +3,7 @@ module github.com/auraspeak/client
 go 1.25.1
 
 require (
+	github.com/auraspeak/network v0.0.0
 	github.com/auraspeak/protocol v0.0.0
 	github.com/pion/dtls/v3 v3.0.10
 	github.com/sirupsen/logrus v1.9.4
@@ -19,4 +20,7 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/auraspeak/protocol => ../protocol
+replace (
+	github.com/auraspeak/network => ../network
+	github.com/auraspeak/protocol => ../protocol
+)
