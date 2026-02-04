@@ -176,13 +176,13 @@ func TestStop_MultipleCalls(t *testing.T) {
 func TestClient_StateManagement(t *testing.T) {
 	c := NewClient("localhost", 8080)
 
-	assert.Equal(t, int32(0), atomic.LoadInt32(&c.ClientState.Running))
+	assert.Equal(t, int32(0), atomic.LoadInt32(&c.Running))
 
 	c.SetRunningState(true)
-	assert.Equal(t, int32(1), atomic.LoadInt32(&c.ClientState.Running))
+	assert.Equal(t, int32(1), atomic.LoadInt32(&c.Running))
 
 	c.SetRunningState(false)
-	assert.Equal(t, int32(0), atomic.LoadInt32(&c.ClientState.Running))
+	assert.Equal(t, int32(0), atomic.LoadInt32(&c.Running))
 }
 
 func TestRun_ReceivesPacket(t *testing.T) {

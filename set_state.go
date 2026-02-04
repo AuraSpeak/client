@@ -11,6 +11,6 @@ func (c *Client) SetRunningState(running bool) {
 	if running {
 		v = 1
 	}
-	atomic.StoreInt32(&c.ClientState.Running, v)
+	atomic.StoreInt32(&c.Running, v)
 	// OutCommandCh is nil in non-debug builds, so no notification is sent
 }
